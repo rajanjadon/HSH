@@ -1,0 +1,97 @@
+@import 'variable';
+
+.hsh-works-section{
+    background-color: $grey-color;
+}
+
+.image-content-section {
+    display: flex;
+    flex-direction: column;
+
+    @include break-point(largeTablet) {
+        flex-direction: row;
+    }
+
+    .content, .image-frame {
+
+        @include break-point(largeTablet) {
+            flex: 50%;
+        }
+    }
+
+    img {
+        width: 100%;
+
+        @include break-point(largeTablet) {
+            max-width: 100%;
+            width: auto;
+        }
+    }
+
+    &.image-right {
+        .content {
+            @include break-point(largeTablet) {
+                order: 1;
+            }
+        }
+
+        .image-frame {
+            @include break-point(largeTablet) {
+                order: 2;
+            }
+        }
+    }
+
+    .content {
+        display: flex;
+        align-items: center;
+        padding: 20px 0 30px;
+
+        @include break-point(largeTablet) {
+            padding: 40px;
+        }
+
+        .content-wrap {
+            .count {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background: red;
+                text-align: center;
+                border: 5px solid #e5f2a2;
+                display: inline-block;
+                margin-right: 15px;
+                @include textInfo($mobileHeading, 33px, $white-color, $bold);
+
+                @include break-point(tablet) {
+                    width: 60px;
+                    height: 60px;
+                    @include textInfo($heading, 50px, $white-color, $bold);
+                }
+
+                @include break-point(largeTablet) {
+                    margin-right: 0;
+                }
+            }
+
+            h3 {
+                @include textInfo($mobileHeading, 1.3, $blue-color, $semiBold);
+                display: inline-block;
+                margin: 20px 0;
+
+                @include break-point(tablet) {
+                    @include textInfo($heading, 1.3, $blue-color, $semiBold);
+                }
+
+                @include break-point(largeTablet) {
+                    display: block;
+                }
+            }
+
+            p {
+                @include textInfo($paragraph, 1.3, $black-color, $normal);
+            }
+        }
+    }
+}
+ 

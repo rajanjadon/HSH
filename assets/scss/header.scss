@@ -1,0 +1,100 @@
+@import 'variable.scss';
+.main-header {
+    position: sticky;
+    top: 0;
+    background-color: $blue-color;
+    z-index: 2;
+}
+.header-menu {
+    width: 100%;
+    background-color: $blue-color;
+    color: $white-color;
+    padding: 10px 0;
+}
+
+.menu-icon {
+    width: 34%;
+    display: inline-block;
+    font-size: 18px;
+    line-height: 1.2;
+
+
+    .menu-btn {
+        list-style: none;
+        border: 2px solid $white-color;
+        display: inline-block;
+        padding: 5px 9px;
+        cursor: pointer;
+        font-size: 15px;
+
+        a {
+            text-decoration: none;
+            color: $white-color;
+        }
+    }
+}
+
+.logo-hsh {
+    width: 30%;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+
+    h3 {
+        font-size: 38px;
+        font-weight: bold;
+        line-height: 1.2;
+    }
+    
+}
+
+.menu {
+    width: 34%;
+    display: inline-block;
+    text-align: right;
+
+    @include break-point(mobile) {
+        display: none;
+    }
+
+    ul {
+        list-style: none;
+        display: flex;
+        justify-content: flex-end;
+        padding-left: 28px;
+
+        li {
+            display: inline-block;
+            margin-left: 40px;
+
+            a {
+                text-decoration: none;
+                color: $white-color;
+                font-size: 15px;
+            }
+        }
+    }
+}
+
+    /* ........................................................................................... */
+
+    .header-bar {
+
+        background-color: $green-color;
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        padding: 8px 0;
+
+        h3{
+            font-size: 20px;
+        }
+        span:last-child {
+            margin: 0 0 0 10px;
+            color: $white-color;
+        }
+    }
+
+   

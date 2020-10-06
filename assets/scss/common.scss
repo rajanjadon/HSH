@@ -1,0 +1,36 @@
+@import 'variable.scss';
+.overflow-hidden{
+    overflow: hidden;
+}
+.section-title {
+    @include textInfo($smallHeading, 1.3, $blue-color, $semiBold);
+    text-align: center;
+    margin: 0 0 40px;
+
+    @include break-point(tablet) {
+        @include textInfo($mediunHeading, 1.3, $blue-color, $semiBold);
+    }
+}
+
+.section-content{
+    padding: 40px 0;
+}
+
+.container{
+    max-width: 1200px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.green-bg{
+    background:$green-color !important;
+}
+
+.purple-bg{
+    background:$purple-color !important;
+}
+
+.yellow-bg{
+    
+    background:$yellow-color !important;
+}

@@ -1,0 +1,141 @@
+@import 'variable.scss';
+
+
+.banner-image {
+    position: relative;
+    overflow: hidden;
+    max-height: 500px;
+
+    img {
+        width: 100%;
+    }
+
+    .banner-content {
+        position: absolute;
+        top: 0;
+        color: $white-color;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        background: rgba(0,0,0,0.3);
+        padding: 15px;
+
+        .center-div {
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            padding: 0 15px;
+        }
+    }
+
+    h1 {
+        @include textInfo($heading, 1.3, $white-color, $normal);
+        text-align: center;
+        margin-bottom: 30px;
+
+        @include break-point(tablet) {
+            @include textInfo($mediunHeading, 1.3, $white-color, $normal);
+        }
+
+        @include break-point(largeTablet) {
+            @include textInfo($LargeHeading, 1.3, $white-color, $normal);
+        }
+    }
+}
+
+
+
+.banner-icon {
+    max-width: 750px;
+    margin: 20px auto 0;
+    display: block;
+
+
+
+    ul {
+        list-style: none;
+    }
+
+    li {
+        display: inline-block;
+        margin: 0;
+        text-align: center;
+
+
+
+
+        .icon-circle {
+            width: 80px;
+            height: 80px;
+            @include textInfo($heading, 80px, $white-color, $normal);
+            background: $white-color;
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            display: block;
+            color: $green-color;
+            position: relative;
+
+            img {
+                max-width: 45px;
+                max-height: 40px;
+                width: auto;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                margin: auto;
+            }
+
+            .white {
+                display: none;
+            }
+
+            .green {
+                display: block;
+            }
+
+            &:after {
+                content: "";
+                width: 0;
+                height: 0;
+                border-left: 15px solid transparent;
+                border-right: 15px solid transparent;
+                border-top: 15px solid $white-color;
+                position: absolute;
+                bottom: -10px;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+            }
+        }
+
+        &.active,
+        &:hover {
+            .icon-circle {
+                color: $white-color;
+                background: $green-color;
+
+                .white {
+                    display: block;
+                }
+
+                .green {
+                    display: none;
+                }
+
+                &:after {
+                    border-top: 15px solid $green-color;
+                }
+            }
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: $white-color;
+        outline: none;
+    }
+}

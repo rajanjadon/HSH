@@ -1,0 +1,60 @@
+@mixin reset-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+
+@mixin textInfo($fontSize, $lineHeight, $color, $fontWeight) {
+	font-size: $fontSize;
+	line-height: $lineHeight;
+	color: $color;
+	font-weight:$fontWeight;
+}
+
+@mixin font-type($name, $location, $fontWeight) {
+	@font-face {
+		font-family: $name;
+		src: url($location);
+		font-weight: $fontWeight;
+	}
+}
+
+
+@mixin break-point($point) {
+	@if $point == tablet {
+		@media screen and (min-width: 768px) {
+			@content;
+		}
+	}
+	@else if $point == largeTablet {
+		@media screen and (min-width: 992px) {
+			@content;
+		}
+	}
+	@else if $point == miniDesktop {
+		@media screen and (min-width: 1025px) {
+			@content;
+		}
+	}
+	@else if $point == Desktop {
+		@media screen and (min-width: 1200px) {
+			@content;
+		}
+	}
+	@else if $point == largeDesktop {
+		@media screen and (min-width: 1440px) {
+			@content;
+		}
+	}
+	@else if $point == mobile {
+		@media screen and (max-width: 767px) {
+			@content;
+		}
+	}
+	@else if $point == ie {
+		@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+			@content;
+		}
+	}
+}
